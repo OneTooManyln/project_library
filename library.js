@@ -12,8 +12,12 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary() {
   let title = prompt("What is your books title?");
-  myLibrary.push(title);
-  console.table(myLibrary);
+  if (!title == "") {
+    myLibrary.push(title);
+    console.table(myLibrary);
+  } else {
+    console.table(myLibrary);
+  }
 }
 
 addBookToLibrary();
