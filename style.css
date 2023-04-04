@@ -13,9 +13,24 @@ body {
   color: rgb(41, 41, 41);
 }
 
+.header,
+.content-container,
+.bookcontent {
+  padding-left: 90px;
+  padding-bottom: 15px;
+}
+
 .header {
   background-color: antiquewhite;
-  padding: 10px;
+  padding-top: 10px;
+}
+
+.new-book {
+  background-color: rgb(126, 179, 106);
+  border: none;
+  margin-top: 20px;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 
 h1 {
