@@ -11,7 +11,7 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  let title = prompt("What is your books title?");
+  /*   let title = prompt("What is your books title?");*/
   if (!title == "") {
     myLibrary.push(title);
     console.table(myLibrary);
@@ -21,6 +21,17 @@ function addBookToLibrary() {
 }
 
 addBookToLibrary();
+
+const table = document.getElementById("table");
+
+function displayBook() {
+  let row = document.createElement("tr");
+}
+
+const newBook = document.querySelector("button");
+newBook.addEventListener("click", () => {
+  displayBook();
+});
 
 /* const theHobbit = new Book(
   "The Hobbit ",
