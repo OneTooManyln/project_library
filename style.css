@@ -15,8 +15,8 @@ body {
 
 .header,
 .content-container,
-.bookcontent {
-  padding-left: 90px;
+.book-content {
+  padding-left: 170px;
   padding-bottom: 15px;
 }
 
@@ -36,4 +36,22 @@ body {
 h1 {
   font-size: 2.5rem;
   color: rgb(41, 41, 41);
+}
+
+table {
+  background-color: whitesmoke;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  padding: 20px;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 10px 20px;
+  margin: 50px;
+}
+
+td {
+  background-color: white;
 }
