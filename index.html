@@ -18,7 +18,24 @@
         </p>
       </div>
       <div class="content-container">
-        <button class="new-book">NEW BOOK</button>
+        <button class="new-book">+ NEW BOOK</button>
+        <form action="">
+          <div class="inputs">
+            <label for="book_title">Book</label>
+            <input type="text" id="book_title" name="book_title" required />
+          </div>
+          <div class="inputs">
+            <label for="book_author">Author</label>
+            <input type="text" id="book_author" name="book_author" required />
+          </div>
+          <div class="inputs">
+            <label for="book_status">Book</label>
+            <select name="book_status" id="book_status">
+              <option value="read">Read</option>
+              <option value="not_read">Not Read</option>
+            </select>
+          </div>
+        </form>
       </div>
       <div class="book-content"></div>
     </div>
