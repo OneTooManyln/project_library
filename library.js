@@ -26,7 +26,7 @@ const table = document.getElementById("table");
 const title = document.getElementById("book_title").value;
 const author = document.getElementById("book_author").value;
 const pages = document.getElementById("book_pages").value;
-const bookStatus = document.getElementById("book_status").textContent;
+const bookStatus = document.getElementById("book_status").value;
 
 function displayBook() {
   createTableRow();
@@ -54,8 +54,9 @@ function createTableRow() {
   table.appendChild(row);
 }
 
-const newBook = document.querySelector("button");
-newBook.addEventListener("click", () => {
+const newBook = document.getElementById("submit");
+newBook.addEventListener("submit", () => {
+  e.preventDefault();
   displayBook();
 });
 
