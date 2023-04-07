@@ -24,22 +24,7 @@ function Book(title, author, pages, status) {
   this.author = author;
   this.pages = pages;
   this.status = status;
-  /*   this.info = function () {
-    return title + author + pages + read;
-  }; */
 }
-
-/* function addBookToLibrary() {
-     let title = prompt("What is your books title?");
-  if (!title == "") {
-    myLibrary.push(title);
-    console.table(myLibrary);
-  } else {
-    console.table(myLibrary);
-  }
-}
-
-addBookToLibrary(); */
 
 const table = document.getElementById("table");
 const title = document.getElementById("book_title");
@@ -65,12 +50,21 @@ function addBookToLibrary() {
   console.table(myLibrary);
 }
 
+myLibrary.forEach((myLibrary) => {
+  createTableRow(
+    myLibrary.title,
+    myLibrary.author,
+    myLibrary.pages,
+    myLibrary.status
+  );
+});
+
 function displayBook() {
   createTableRow();
   console.log("this works");
 }
 
-function createTableRow() {
+function createTableRow(title, author, pages, bookStatus) {
   let row = document.createElement("tr");
 
   let c1 = document.createElement("td");
