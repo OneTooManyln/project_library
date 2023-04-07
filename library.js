@@ -3,19 +3,19 @@ let myLibrary = [
     title: "The Toll",
     author: "Neal Shusterman",
     pages: "640",
-    status: "read",
+    status: "Read",
   },
   {
     title: "The Denial of Death",
     author: "Ernest Becker",
     pages: "336",
-    status: "not read",
+    status: "Not Read",
   },
   {
     title: "With the Old Breed: At Peleliu and Okinawa",
     author: "Euguene B. Sledge",
     pages: "402",
-    status: "read",
+    status: "Read",
   },
 ];
 
