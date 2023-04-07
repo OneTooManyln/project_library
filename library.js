@@ -30,7 +30,7 @@ const bookStatus = document.getElementById("book_status").value;
 
 function displayBook() {
   createTableRow();
-  console.log(bookStatus);
+  console.log("this works");
 }
 
 function createTableRow() {
@@ -54,8 +54,8 @@ function createTableRow() {
   table.appendChild(row);
 }
 
-const newBook = document.getElementById("submit");
-newBook.addEventListener("submit", () => {
+const newBook = document.querySelector("form");
+newBook.addEventListener("submit", (e) => {
   e.preventDefault();
   displayBook();
 });
