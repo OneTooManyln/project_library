@@ -24,9 +24,9 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function () {
+  /*   this.info = function () {
     return title + author + pages + read;
-  };
+  }; */
 }
 
 /* function addBookToLibrary() {
@@ -42,10 +42,28 @@ function Book(title, author, pages, read) {
 addBookToLibrary(); */
 
 const table = document.getElementById("table");
-const title = document.getElementById("book_title").value;
-const author = document.getElementById("book_author").value;
-const pages = document.getElementById("book_pages").value;
-const bookStatus = document.getElementById("book_status").value;
+const title = document.getElementById("book_title");
+const author = document.getElementById("book_author");
+const pages = document.getElementById("book_pages");
+const bookStatus = document.getElementById("book_status");
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  /* displayBook(); */
+  addBookToLibrary();
+});
+
+function addBookToLibrary() {
+  const newBook = new Book(
+    title.value,
+    author.value,
+    pages.value,
+    bookStatus.value
+  );
+  myLibrary.push(newBook);
+  console.table(myLibrary);
+}
 
 function displayBook() {
   createTableRow();
@@ -72,12 +90,6 @@ function createTableRow() {
 
   table.appendChild(row);
 }
-
-const newBook = document.querySelector("form");
-newBook.addEventListener("submit", (e) => {
-  e.preventDefault();
-  displayBook();
-});
 
 /* const theHobbit = new Book(
   "The Hobbit ",
