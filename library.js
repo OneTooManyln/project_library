@@ -19,11 +19,11 @@ let myLibrary = [
   },
 ];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, status) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
+  this.status = status;
   /*   this.info = function () {
     return title + author + pages + read;
   }; */
