@@ -35,7 +35,7 @@ const bookStatus = document.getElementById("book_status");
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  /* displayBook(); */
+  displayUserBook();
   addBookToLibrary();
 });
 
@@ -59,12 +59,12 @@ myLibrary.forEach((myLibrary) => {
   );
 });
 
-function displayBook() {
-  createTableRow();
+function displayUserBook() {
+  createTableRow(title.value, author.value, pages.value, bookStatus.value);
   console.log("this works");
 }
 
-function createTableRow(title, author, pages, bookStatus) {
+function createTableRow(title, author, pages, status) {
   let row = document.createElement("tr");
 
   let c1 = document.createElement("td");
@@ -75,7 +75,7 @@ function createTableRow(title, author, pages, bookStatus) {
   c1.innerText = title;
   c2.innerText = author;
   c3.innerText = pages;
-  c4.innerText = bookStatus;
+  c4.innerText = status;
 
   row.appendChild(c1);
   row.appendChild(c2);
