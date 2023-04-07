@@ -1,4 +1,23 @@
-let myLibrary = ["The Toll", "A New Hope", "The Adventurs of.."];
+let myLibrary = [
+  {
+    title: "The Toll",
+    author: "Neal Shusterman",
+    pages: "640",
+    status: "read",
+  },
+  {
+    title: "The Denial of Death",
+    author: "Ernest Becker",
+    pages: "336",
+    status: "not read",
+  },
+  {
+    title: "With the Old Breed: At Peleliu and Okinawa",
+    author: "Euguene B. Sledge",
+    pages: "402",
+    status: "read",
+  },
+];
 
 function Book(title, author, pages, read) {
   this.title = title;
