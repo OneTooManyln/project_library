@@ -31,6 +31,7 @@ const title = document.getElementById("book_title");
 const author = document.getElementById("book_author");
 const pages = document.getElementById("book_pages");
 const bookStatus = document.getElementById("book_status");
+const removeBtn = document.querySelectorAll(".remove");
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
@@ -38,6 +39,16 @@ form.addEventListener("submit", (e) => {
   displayUserBook();
   addBookToLibrary();
 });
+
+removeBtn.forEach((removeBtn) => {
+  removeBtn.addEventListener("click", (e) =>
+    console.log(e.currentTarget.closest("[data-id]"))
+  );
+});
+
+function removeBook() {
+  console.log("this works");
+}
 
 function addBookToLibrary() {
   const newBook = new Book(
@@ -66,6 +77,7 @@ function displayUserBook() {
 
 function createTableRow(title, author, pages, status) {
   let row = document.createElement("tr");
+  row.dataset.id = title;
 
   let c1 = document.createElement("td");
   let c2 = document.createElement("td");
@@ -86,6 +98,13 @@ function createTableRow(title, author, pages, status) {
   row.appendChild(c5);
 
   table.appendChild(row);
+  setListener(c5);
+}
+
+function setListener(element) {
+  element.addEventListener("click", (e) => {
+    console.log(e.currentTarget.closest("[data-id]"));
+  });
 }
 
 /* const theHobbit = new Book(
