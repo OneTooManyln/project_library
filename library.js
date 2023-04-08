@@ -71,16 +71,19 @@ function createTableRow(title, author, pages, status) {
   let c2 = document.createElement("td");
   let c3 = document.createElement("td");
   let c4 = document.createElement("td");
+  let c5 = document.createElement("td");
 
   c1.innerText = title;
   c2.innerText = author;
   c3.innerText = pages;
   c4.innerText = status;
+  c5.innerHTML = '<button class = "remove">Remove</button>';
 
   row.appendChild(c1);
   row.appendChild(c2);
   row.appendChild(c3);
   row.appendChild(c4);
+  row.appendChild(c5);
 
   table.appendChild(row);
 }
