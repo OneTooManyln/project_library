@@ -41,13 +41,27 @@ form.addEventListener("submit", (e) => {
 });
 
 removeBtn.forEach((removeBtn) => {
-  removeBtn.addEventListener("click", (e) =>
-    console.log(e.currentTarget.closest("[data-id]"))
-  );
+  removeBtn.addEventListener("click", (e) => {
+    /* removeBook(getBook(myLibrary, e.currentTarget.closest("[data-id]"))) */
+    /* console.log(myLibrary[0].title) */
+    const bookTitle =
+      e.currentTarget.parentNode.parentNode.childNodes[1].innerText;
+    /* removeBook(getBook(myLibrary, bookTitle)); */
+    console.log(bookTitle);
+  });
 });
 
-function removeBook() {
+function removeBook(book) {
+  myLibrary.splice(book);
   console.log("this works");
+}
+
+function getBook(title) {
+  for (Book of myLibrary) {
+    if (Book.title === title) {
+      return myLibrary.indexOf(Book);
+    }
+  }
 }
 
 function addBookToLibrary() {
@@ -103,15 +117,9 @@ function createTableRow(title, author, pages, status) {
 
 function setListener(element) {
   element.addEventListener("click", (e) => {
-    console.log(e.currentTarget.closest("[data-id]"));
+    const bookTitle = e.currentTarget.parentNode.innerText;
+    /* removeBook(getBook(myLibrary, bookTitle)); */
+    /* getBook(bookTitle); */
+    console.log(bookTitle);
   });
 }
-
-/* const theHobbit = new Book(
-  "The Hobbit ",
-  "by J.R.R. Tolkien, ",
-  "295 pages, ",
-  "not read yet "
-);
-console.log(theHobbit.info());
-console.log(5); */
