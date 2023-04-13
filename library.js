@@ -117,7 +117,8 @@ function createTableRow(title, author, pages, status) {
 
 function setListener(element) {
   element.addEventListener("click", (e) => {
-    const bookTitle = e.currentTarget.parentNode.innerText;
+    const bookTitle = e.currentTarget.parentNode.childNodes[0].innerText;
+    /* e.currentTarget.parentNode.innerText; */
     /* removeBook(getBook(myLibrary, bookTitle)); */
     /* getBook(bookTitle); */
     console.log(bookTitle);
