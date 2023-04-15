@@ -48,18 +48,19 @@ removeBtn.forEach((removeBtn) => {
       e.currentTarget.parentNode.parentNode.childNodes[1].innerText;
     /* removeBook(getBook(myLibrary, bookTitle)); */
     console.log(bookTitle);
+    /* getBook(bookTitle); */
   });
 });
 
 function removeBook(book) {
-  myLibrary.splice(book);
-  console.log("this works");
+  myLibrary.splice(book, book + 1);
+  console.table(myLibrary);
 }
 
 function getBook(title) {
-  for (Book of myLibrary) {
-    if (Book.title === title) {
-      return myLibrary.indexOf(Book);
+  for (book of myLibrary) {
+    if (book.title === title) {
+      return myLibrary.indexOf(book);
     }
   }
 }
@@ -120,7 +121,7 @@ function setListener(element) {
     const bookTitle = e.currentTarget.parentNode.childNodes[0].innerText;
     /* e.currentTarget.parentNode.innerText; */
     /* removeBook(getBook(myLibrary, bookTitle)); */
-    /* getBook(bookTitle); */
-    console.log(bookTitle);
+    removeBook(getBook(bookTitle));
+    /* console.log(bookTitle); */
   });
 }
