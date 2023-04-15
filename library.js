@@ -46,15 +46,21 @@ removeBtn.forEach((removeBtn) => {
     /* console.log(myLibrary[0].title) */
     const bookTitle =
       e.currentTarget.parentNode.parentNode.childNodes[1].innerText;
+    const bookAtr = e.currentTarget.closest("[data-id]");
     /* removeBook(getBook(myLibrary, bookTitle)); */
     console.log(bookTitle);
     /* getBook(bookTitle); */
+    removeBook(bookAtr);
   });
 });
 
 function removeBook(book) {
-  myLibrary.splice(book, book + 1);
-  console.table(myLibrary);
+  if (typeof book == "number") {
+    myLibrary.splice(book, book + 1);
+    console.table(myLibrary);
+  } else if (typeof book == "object") {
+    book.remove();
+  }
 }
 
 function getBook(title) {
