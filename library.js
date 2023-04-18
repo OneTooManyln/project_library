@@ -42,14 +42,10 @@ form.addEventListener("submit", (e) => {
 
 removeBtn.forEach((removeBtn) => {
   removeBtn.addEventListener("click", (e) => {
-    /* removeBook(getBook(myLibrary, e.currentTarget.closest("[data-id]"))) */
-    /* console.log(myLibrary[0].title) */
     const bookTitle =
       e.currentTarget.parentNode.parentNode.childNodes[1].innerText;
     const bookAtr = e.currentTarget.closest("[data-id]");
-    /* removeBook(getBook(myLibrary, bookTitle)); */
     console.log(bookTitle);
-    /* getBook(bookTitle); */
     removeBook(bookAtr);
   });
 });
@@ -82,19 +78,26 @@ function addBookToLibrary() {
   console.table(myLibrary);
 }
 
-myLibrary.forEach((myLibrary) => {
-  createTableRow(
-    myLibrary.title,
-    myLibrary.author,
-    myLibrary.pages,
-    myLibrary.status
-  );
-});
+function addArrayBook() {
+  while (table.children.length > 1) {
+    table.innerHTML = "";
+  }
+  myLibrary.forEach((myLibrary) => {
+    createTableRow(
+      myLibrary.title,
+      myLibrary.author,
+      myLibrary.pages,
+      myLibrary.status
+    );
+  });
+}
 
 function displayUserBook() {
   createTableRow(title.value, author.value, pages.value, bookStatus.value);
   console.log("this works");
 }
+
+let domBooks;
 
 function createTableRow(title, author, pages, status) {
   let row = document.createElement("tr");
@@ -125,9 +128,10 @@ function createTableRow(title, author, pages, status) {
 function setListener(element) {
   element.addEventListener("click", (e) => {
     const bookTitle = e.currentTarget.parentNode.childNodes[0].innerText;
-    /* e.currentTarget.parentNode.innerText; */
-    /* removeBook(getBook(myLibrary, bookTitle)); */
     removeBook(getBook(bookTitle));
-    /* console.log(bookTitle); */
+    let domBooks = document.getElementById("dom-books");
+    console.log(domBooks.getAttribute("data-id"));
+    addArrayBook();
   });
 }
+addArrayBook();
