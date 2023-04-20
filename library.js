@@ -107,6 +107,8 @@ let domBooks;
 
 function createTableRow(title, author, pages, status) {
   let row = document.createElement("tr");
+  let statusBtn = document.createElement("button");
+  statusBtn.classList.add("status");
   row.dataset.id = title;
 
   let c1 = document.createElement("td");
@@ -118,13 +120,14 @@ function createTableRow(title, author, pages, status) {
   c1.innerText = title;
   c2.innerText = author;
   c3.innerText = pages;
-  c4.innerText = status;
+  statusBtn.innerText = status;
   c5.innerHTML = '<button class = "remove">Remove</button>';
 
   row.appendChild(c1);
   row.appendChild(c2);
   row.appendChild(c3);
   row.appendChild(c4);
+  c4.appendChild(statusBtn);
   row.appendChild(c5);
 
   table.appendChild(row);
