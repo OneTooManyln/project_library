@@ -1,5 +1,11 @@
 let myLibrary = [
   {
+    title: "The brief Wondrous Life of Oscar Wao",
+    author: "Junot Diaz",
+    pages: "360",
+    status: "Not Read",
+  },
+  {
     title: "The Toll",
     author: "Neal Shusterman",
     pages: "640",
@@ -52,7 +58,7 @@ removeBtn.forEach((removeBtn) => {
 
 function removeBook(book) {
   if (typeof book == "number") {
-    myLibrary.splice(book, book + 1);
+    myLibrary.splice(book, 1);
     console.table(myLibrary);
   } else if (typeof book == "object") {
     book.remove();
@@ -129,8 +135,6 @@ function setListener(element) {
   element.addEventListener("click", (e) => {
     const bookTitle = e.currentTarget.parentNode.childNodes[0].innerText;
     removeBook(getBook(bookTitle));
-    let domBooks = document.getElementById("dom-books");
-    console.log(domBooks.getAttribute("data-id"));
     addArrayBook();
   });
 }
