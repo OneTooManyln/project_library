@@ -52,10 +52,28 @@ table {
 td,
 th {
   text-align: left;
-  padding: 10px 20px;
+  padding: 20px 30px;
   margin: 50px;
 }
 
 td {
   background-color: white;
+}
+
+td .status,
+.remove {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80px;
+  height: 30px;
+  color: whitesmoke;
+}
+
+td .status {
+  background-color: rgb(247, 88, 88);
+}
+
+td .remove {
+  background-color: rgb(51, 195, 240, 1);
 }
