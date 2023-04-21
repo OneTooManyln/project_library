@@ -56,6 +56,15 @@ removeBtn.forEach((removeBtn) => {
   });
 });
 
+function changeStatus(book) {
+  if (myLibrary[book].status === "Not Read") {
+    myLibrary[book].status = "Read";
+    console.table(myLibrary);
+  } else {
+    myLibrary[book].status = "Not Read";
+  }
+}
+
 function removeBook(book) {
   if (typeof book == "number") {
     myLibrary.splice(book, 1);
@@ -132,12 +141,22 @@ function createTableRow(title, author, pages, status) {
 
   table.appendChild(row);
   setListener(c5);
+  setStatusListener(statusBtn);
 }
 
 function setListener(element) {
   element.addEventListener("click", (e) => {
     const bookTitle = e.currentTarget.parentNode.childNodes[0].innerText;
     removeBook(getBook(bookTitle));
+    addArrayBook();
+  });
+}
+
+function setStatusListener(element) {
+  element.addEventListener("click", (e) => {
+    const bookTitle =
+      e.currentTarget.parentNode.parentNode.childNodes[0].innerText;
+    changeStatus(getBook(bookTitle));
     addArrayBook();
   });
 }
