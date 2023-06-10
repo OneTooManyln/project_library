@@ -36,6 +36,7 @@ body {
 
 form {
   margin-top: 5px;
+  display: none;
 }
 
 .inputs {
