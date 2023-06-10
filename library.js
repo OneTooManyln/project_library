@@ -40,6 +40,7 @@ const author = document.getElementById("book_author");
 const pages = document.getElementById("book_pages");
 const bookStatus = document.getElementById("book_status");
 const removeBtn = document.querySelectorAll(".remove");
+const newBook = document.querySelector(".new-book");
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
@@ -56,6 +57,10 @@ removeBtn.forEach((removeBtn) => {
     console.log(bookTitle);
     removeBook(bookAtr);
   });
+});
+
+newBook.addEventListener("click", () => {
+  showForm(form);
 });
 
 function changeStatus(book) {
@@ -163,3 +168,9 @@ function setStatusListener(element) {
   });
 }
 addArrayBook();
+
+function showForm(element) {
+  if (element.style.display == "block") {
+    element.style.display = "none";
+  } else element.style.display = "block";
+}
